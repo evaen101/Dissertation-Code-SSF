@@ -132,7 +132,7 @@ ssf<- foreach (i=1:nBuzzards, .packages=c("survival"), .export=c("clogit","strat
   model<-clogit(case~elevation+snow+land_cover_.05+land_cover_500m +fpar_500m_8d
                 +fpar_500m_4d+ndvi_500m_16d_aqua
                 +ndvi_500m_16d_terra+ndvi_.05_16d_terra
-                +ndvi_.05_16d_aqua+temp+precip+wind_support+crosswind+airspeed 
+                +ndvi_.05_16d_aqua+temp+precip+wind_support+crosswind
                 +pop_den_coarse+pop_den_fine+ strata(step_id),
              data=oneBuzzard)
   OR.CI<-cbind("OR"=exp(coef(model)), exp(confint(model)))
